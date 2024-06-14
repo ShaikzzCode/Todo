@@ -1,0 +1,337 @@
+    /* adding custom downloaded fonts */
+    @font-face {
+        font-family: 'ourFont';
+        src: url('./fonts/Quicksand.ttf');
+    }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        user-select: none;
+        -webkit-user-select: none;
+        font-family: 'ourFont','serif';
+      }
+      :root {
+        --mainBlack: #111111;
+        --mainWhite: #f5f5f5;
+        --mainOrange: rgb(255, 166, 0);
+      }
+      body{
+        background-color: var(--mainBlack);
+      }
+      .mainContainer {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        background-color: var(--mainBlack);
+        padding: 20px;
+        overflow: hidden;
+      }
+      .inputTagContainer {
+        display: flex;
+      }
+      .inputTagContainer input {
+        width: 100%;
+        height: 40px;
+        outline: none;
+        outline-offset: -3px;
+        padding: 0 10px;
+        border: none;
+        border-radius: 10px 0 0 10px;
+        font-weight: bold;
+        font-size: 16px;
+      }
+      .inputTagContainer input:focus {
+        outline: 3px solid var(--mainOrange);
+        box-shadow: 0 0 10px var(--mainOrange);
+      }
+      .inputTagContainer button {
+        width: 100px;
+        height: 40px;
+        border: none;
+        background-color: var(--mainOrange);
+        font-weight: bold;
+        border-radius: 0 10px 10px 0;
+        cursor: pointer;
+      }
+      .inputTagContainer button:hover {
+        box-shadow: 0 0 10px var(--mainOrange);
+      }
+      .todoHolder {
+        width: 100%;
+        height: 100vh;
+        list-style: none;
+        padding: 20px 0;
+        overflow-x: hidden;
+        overflow-y: scroll;
+      }
+      .todoHolder::-webkit-scrollbar{
+        width: 5px;
+        background-color: #111111;
+      }
+      .todoHolder::-webkit-scrollbar-thumb{
+        border-radius: 10px;
+          background-color: var(--mainOrange);
+      }
+      .todoHolder li {
+        background-color: #2a2a2a64;
+        border-radius: 10px;
+        color: #f5f5f5;
+        font-size: 18px;
+        padding: 5px 10px;
+        display: flex;
+        align-items: center;
+        margin: 2px 0;
+      }
+      .todoHolder > li > span {
+        display: inline-block;
+        width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+      }
+  
+      .todoHolder li button {
+        width: 100px;
+        min-width: 80px;
+        height: 40px;
+        border: none;
+        margin: 0 3px;
+        background-color: var(--mainOrange);
+        font-weight: bold;
+        border-radius: 10px;
+        cursor: pointer;
+      }
+  
+      .editForm {
+        width: 100vw;
+        height: 100vh;
+        position: absolute;
+        top: 0;
+        background-color: #111111c4;
+        display: none;
+        align-items: center;
+        justify-content: center;
+      }
+      .editForm div {
+        width: 300px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border-radius: 15px;
+        background-color: var(--mainOrange);
+        box-shadow: 0 0 7px var(--mainOrange);
+        padding: 10px;
+      }
+      .editForm div input {
+        width: 100%;
+        height: 40px;
+        border: none;
+        outline: none;
+        outline-offset: -2px;
+        padding: 0 10px;
+        border-radius: 10px;
+        font-weight: bold;
+      }
+      .editForm div input:focus {
+        outline: 2px solid var(--mainBlack);
+      }
+      .editForm > div > .editBtns {
+        width: 100%;
+        height: auto;
+        display: flex;
+      }
+      .editForm > div > span {
+        color: var(--mainBlack);
+        font-size: 20px;
+        font-weight: bold;
+        margin-top: 15px;
+        margin-bottom: 10px;
+      }
+      .editForm > div > .editBtns > button {
+        display: inline-block;
+        width: 100%;
+        height: 40px;
+        margin: 4px 0;
+        background-color: var(--mainBlack);
+        color: #f5f5f5;
+        font-weight: bold;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+      }
+      .editForm > div > .editBtns > button:hover, .selectedCCBtn{
+        outline: 2px solid var(--mainBlack);
+        outline-offset: 2px;
+      }
+      .disabledBtn{
+        pointer-events: none;
+        opacity: 0.9;
+      }
+      .noTodo {
+        width: 100%;
+        height: 300px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 22px;
+        font-weight: bold;
+        color: #cccccc4b;
+      }
+      footer{
+        width: 100%;
+        padding: 10px 0;
+        font-size: 12px;
+        color: var(--mainWhite);
+        position: absolute;
+        bottom: 0;
+        z-index: 10;
+        background-color: var(--mainBlack);
+        /* background-color: red; */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+  
+      
+  
+      /* error shaking animation */
+      .error {
+        animation: shake 0.5s;
+        border: 2px solid red;
+        border-radius: 12px;
+        box-shadow: 0 0 10px red;
+      }
+      @keyframes shake {
+        0% {
+          transform: translateX(0);
+        }
+        25% {
+          transform: translateX(-5px);
+        }
+        50% {
+          transform: translateX(5px);
+        }
+        75% {
+          transform: translateX(-5px);
+        }
+        100% {
+          transform: translateX(0);
+        }
+      }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+      .loaderContainer{
+        width: 100vw;
+        height: 100vh;
+        background-color: var(--mainBlack);
+        position: absolute;
+        inset: 0;
+        z-index: 100;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+      .loaderContainer span{
+        color: var(--mainOrange);
+        font-weight: bold;
+        font-size: 12px;
+        margin-top: 10px;
+        margin-left: 5px;
+      }
+      .loader {
+        animation: rotate 1s infinite;
+        height: 50px;
+        width: 50px;
+      }
+      
+      .loader:before,
+      .loader:after {
+        border-radius: 50%;
+        content: '';
+        display: block;
+        height: 20px;
+        width: 20px;
+      }
+      
+      .loader:before {
+        animation: ball1 1s infinite;
+        background-color: #cb2025;
+        box-shadow: 30px 0 0 #f8b334;
+        margin-bottom: 10px;
+      }
+      
+      .loader:after {
+        animation: ball2 1s infinite;
+        background-color: #00a096;
+        box-shadow: 30px 0 0 #97bf0d;
+      }
+      
+      @keyframes rotate {
+        0% {
+          -webkit-transform: rotate(0deg) scale(0.8);
+          -moz-transform: rotate(0deg) scale(0.8);
+        }
+      
+        50% {
+          -webkit-transform: rotate(360deg) scale(1.2);
+          -moz-transform: rotate(360deg) scale(1.2);
+        }
+      
+        100% {
+          -webkit-transform: rotate(720deg) scale(0.8);
+          -moz-transform: rotate(720deg) scale(0.8);
+        }
+      }
+      
+      @keyframes ball1 {
+        0% {
+          box-shadow: 30px 0 0 var(--mainOrange);
+        }
+      
+        50% {
+          box-shadow: 0 0 0 var(--mainOrange);
+          margin-bottom: 0;
+          -webkit-transform: translate(15px,15px);
+          -moz-transform: translate(15px, 15px);
+        }
+      
+        100% {
+          box-shadow: 30px 0 0 var(--mainOrange);
+          margin-bottom: 10px;
+        }
+      }
+      
+      @keyframes ball2 {
+        0% {
+          box-shadow: 30px 0 0 #97bf0d;
+        }
+      
+        50% {
+          box-shadow: 0 0 0 #97bf0d;
+          margin-top: -20px;
+          -webkit-transform: translate(15px,15px);
+          -moz-transform: translate(15px, 15px);
+        }
+      
+        100% {
+          box-shadow: 30px 0 0 #97bf0d;
+          margin-top: 0;
+        }
+      }

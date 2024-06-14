@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Todo Maker</title>
+  <meta name="description"
+    content="Manage your tasks efficiently with Todo - a simple yet powerful task management tool by Shaik. Stay organized, boost productivity, and accomplish more with Todo." />
+  <meta name="keywords"
+    content="Todo app, task management, productivity, to-do list, organize tasks, time management, Shaik, task planner, task organizer" />
+  <meta name="author" content="Fizal Shaik" />
+
+  <!-- Adding Fav Icon -->
+  <link rel="icon" type="image/png" href="./todo_fav.png" />
+
+  <link rel="stylesheet" href="./styles.css" />
+  <script src="./script.js" defer></script>
+</head>
+
+<body>
+  <section class="mainContainer">
+    <div class="inputTagContainer" id="inputTagContainer">
+      <input type="text" id="inputTag" placeholder="Write something..." />
+      <button id="addButton">ADD</button>
+    </div>
+    <span class="noTodo" id="noTodo">No Todo's !</span>
+    <ul id="todoHolder" class="todoHolder"></ul>
+  </section>
+
+  <div id="editForm" class="editForm" style="display: none">
+    <div>
+      <input type="text" placeholder="Write something..." id="editInput" />
+      <div class="editBtns">
+        <button id="updateThisBtn">UPDATE</button>
+        <button id="cancelThisBtn">CANCEL</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="deleteConfirmBox" class="editForm" style="display: none">
+    <div>
+      <span>Really want to delete this ?</span>
+      <div class="editBtns">
+        <button id="delteThisBtn">YES</button>
+        <button id="canceldeleteThisBtn">NO</button>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <span>Copyright &copy; <span id="dateCopyRight"></span> - developer : Fizal
+      Shaik</span>
+  </footer>
+
+  <section class="loaderContainer">
+    <div class="loader"></div>
+    <span>Loading...</span>
+  </section>
+</body>
+
+</html>
